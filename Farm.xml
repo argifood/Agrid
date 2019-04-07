@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uma:MethodLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uma="http://www.eclipse.org/epf/uma/1.0.6" name="library.xmi" briefDescription="" id="_y62TUKVPEdmMZJIzZ1W7Pw" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" tool="epf=1.5.0">
+  <MethodElementProperty value="0"/>
+  <MethodElementProperty value="_0TLvwMlgEdmt3adZL5Dmdw"/>
+  <MethodElementProperty value="openup"/>
+  <MethodElementProperty value="_WCUhAO8KEdmKSqa_gSYthg"/>
+  <MethodElementProperty value="base_concepts"/>
+  <MethodElementProperty value="_Nq0WYFkVEdul8L-IGeA7TA"/>
+  <MethodElementProperty value="dsdm_openup"/>
+  <MethodElementProperty value="_SdGbIFfIEemr48fy94FfqQ"/>
+  <MethodElementProperty value="farm_plugin"/>
+  <MethodPlugin name="farm_plugin" briefDescription="" id="_SdGbIFfIEemr48fy94FfqQ" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" supporting="false" userChangeable="true">
+    <ReferencedMethodPlugin>_0TLvwMlgEdmt3adZL5Dmdw</ReferencedMethodPlugin>
+    <MethodPackage xsi:type="uma:ContentCategoryPackage" name="ContentCategories" id="_TL4ZYFicEemvS5mdKdaW_Q"/>
+    <MethodPackage xsi:type="uma:ContentPackage" name="farm_content_package" briefDescription="" id="_dSkv4FfIEemr48fy94FfqQ" orderingGuide="" presentationName="Farm Content Package" suppressed="false" global="false">
+      <MethodElementProperty name="pkg_loadCheck" value="true"/>
+      <MethodElementProperty name="me_edited" value="true"/>
+      <ContentElement xsi:type="uma:Role" name="farmer" briefDescription="" id="_JedPsFfJEemr48fy94FfqQ" orderingGuide="" presentationName="Farmer" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="crop" briefDescription="" id="_Qo42EFfJEemr48fy94FfqQ" orderingGuide="" presentationName="Crop" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <Presentation xsi:type="uma:TaskDescription" name=",_Qo42EFfJEemr48fy94FfqQ" briefDescription="" id="-BtrxiBPaMEDcu_ubyRkG3w" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" externalId="">
+          <MainDescription></MainDescription>
+          <KeyConsiderations></KeyConsiderations>
+          <Alternatives></Alternatives>
+          <Purpose></Purpose>
+        </Presentation>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <Output>_6eybEFh7EemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Role" name="retailer" briefDescription="" id="_1_GysFfWEemvS5mdKdaW_Q" orderingGuide="" presentationName="Retailer" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="package" briefDescription="Packaging of collected product" id="_OHwi0FfZEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="sell_b2c" briefDescription="Changes state of product to sold" id="_gUyI8FhSEemvS5mdKdaW_Q" orderingGuide="" presentationName="Sell B2C" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_7opCQFh_EemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_-Tp3AFh_EemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_product_state_raw" briefDescription="" id="_6eybEFh7EemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Product State Raw" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="Workproduct_states" value=""/>
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_product_state_packaged" briefDescription="" id="_7opCQFh_EemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Product State Packaged" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_product_state_sold" briefDescription="" id="_-Tp3AFh_EemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Product State Sold" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="sell_b2b" briefDescription="Transfer of ownership between parties" id="_ev-kIFibEemvS5mdKdaW_Q" orderingGuide="" presentationName="sell_b2b" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_6eybEFh7EemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_6eybEFh7EemvS5mdKdaW_Q</Output>
+      </ContentElement>
+    </MethodPackage>
+    <MethodPackage xsi:type="uma:ProcessComponent" name="Farming" briefDescription="" id="_s4gdwFfaEemvS5mdKdaW_Q" orderingGuide="" presentationName="" suppressed="false" global="false" authors="" changeDescription="" version="">
+      <MethodElementProperty name="pkg_loadCheck" value="true"/>
+      <MethodElementProperty name="me_edited" value="true"/>
+      <Process xsi:type="uma:DeliveryProcess" name="Farming" briefDescription="" id="_s4gdwVfaEemvS5mdKdaW_Q" orderingGuide="" presentationName="Farming" suppressed="false" isAbstract="false" hasMultipleOccurrences="false" isOptional="false" isPlanned="true" prefix="" isEventDriven="false" isOngoing="false" isRepeatable="false" variabilityType="na">
+        <Presentation xsi:type="uma:DeliveryProcessDescription" name="Farming,_s4gdwVfaEemvS5mdKdaW_Q" briefDescription="" id="-3JDUMb2dT2iN34TUFwxL4Q" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" externalId="" usageGuidance="">
+          <MainDescription></MainDescription>
+          <KeyConsiderations></KeyConsiderations>
+          <Alternatives></Alternatives>
+          <HowToStaff></HowToStaff>
+          <Purpose></Purpose>
+          <Scope></Scope>
+          <UsageNotes></UsageNotes>
+          <Scale></Scale>
+          <ProjectCharacteristics></ProjectCharacteristics>
+          <RiskLevel></RiskLevel>
+          <EstimatingTechnique></EstimatingTechnique>
+          <ProjectMemberExpertise></ProjectMemberExpertise>
+          <TypeOfContract></TypeOfContract>
+        </Presentation>
+        <BreakdownElement xsi:type="uma:Activity" name="crop_fields" briefDescription="" id="_m06uMVfbEemvS5mdKdaW_Q" orderingGuide="" presentationName="crop_fields" suppressed="false" isAbstract="false" hasMultipleOccurrences="false" isOptional="false" isPlanned="true" prefix="" isEventDriven="false" isOngoing="false" isRepeatable="false" variabilityType="na">
+          <SuperActivity>_s4gdwVfaEemvS5mdKdaW_Q</SuperActivity>
+        </BreakdownElement>
+      </Process>
+    </MethodPackage>
+  </MethodPlugin>
+</uma:MethodLibrary>

@@ -1,0 +1,355 @@
+{"uma:MethodLibrary": {
+    "MethodPlugin": {
+        "MethodPackage": [
+            {
+                "xsi:type": "uma:ContentCategoryPackage",
+                "name": "ContentCategories",
+                "id": "_RD8tQFiAEemvS5mdKdaW_Q"
+            },
+            {
+                "presentationName": "Farm Content Package",
+                "ContentElement": [
+                    {
+                        "presentationName": "Raw product",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "raw_product",
+                        "id": "_pSDZoFfIEemr48fy94FfqQ",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": "Raw product before crop"
+                    },
+                    {
+                        "presentationName": "Farmer",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Role",
+                        "name": "farmer",
+                        "id": "_JedPsFfJEemr48fy94FfqQ",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "presentationName": "Crop",
+                        "MandatoryInput": "_pSDZoFfIEemr48fy94FfqQ",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "Presentation": {
+                            "presentationName": "",
+                            "changeDescription": "",
+                            "xsi:type": "uma:TaskDescription",
+                            "externalId": "",
+                            "Purpose": "",
+                            "version": "",
+                            "Alternatives": "",
+                            "KeyConsiderations": "",
+                            "orderingGuide": "",
+                            "name": ",_Qo42EFfJEemr48fy94FfqQ",
+                            "MainDescription": "",
+                            "id": "-BtrxiBPaMEDcu_ubyRkG3w",
+                            "suppressed": false,
+                            "briefDescription": "",
+                            "authors": ""
+                        },
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_VyXwAFfXEemvS5mdKdaW_Q",
+                        "name": "crop",
+                        "PerformedBy": "_JedPsFfJEemr48fy94FfqQ",
+                        "id": "_Qo42EFfJEemr48fy94FfqQ",
+                        "suppressed": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "presentationName": "Collector",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Role",
+                        "name": "collector",
+                        "id": "_1_GysFfWEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "presentationName": "Cropped Raw Product",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "cropped_raw_product",
+                        "id": "_VyXwAFfXEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": "Raw product after crop"
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Collected product",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "collected_product",
+                        "id": "_iaCbIFfXEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": "Collected Raw product"
+                    },
+                    {
+                        "presentationName": "Collect",
+                        "MandatoryInput": "_VyXwAFfXEemvS5mdKdaW_Q",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_iaCbIFfXEemvS5mdKdaW_Q",
+                        "name": "collect",
+                        "PerformedBy": [
+                            "_JedPsFfJEemr48fy94FfqQ",
+                            "_1_GysFfWEemvS5mdKdaW_Q"
+                        ],
+                        "id": "_Il5SMFfYEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "briefDescription": "Collect cropped product from farmer"
+                    },
+                    {
+                        "presentationName": "Package",
+                        "MandatoryInput": "_iaCbIFfXEemvS5mdKdaW_Q",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_S-tDoFfZEemvS5mdKdaW_Q",
+                        "name": "package",
+                        "PerformedBy": "_1_GysFfWEemvS5mdKdaW_Q",
+                        "id": "_OHwi0FfZEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "briefDescription": "Packaging of collected product"
+                    },
+                    {
+                        "presentationName": "Packaged product",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "packaged_product",
+                        "id": "_S-tDoFfZEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Consumer",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Role",
+                        "name": "consumer",
+                        "id": "_c5dRkFhSEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Sell Product",
+                        "MandatoryInput": "_7opCQFh_EemvS5mdKdaW_Q",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_-Tp3AFh_EemvS5mdKdaW_Q",
+                        "name": "sell_product",
+                        "PerformedBy": [
+                            "_1_GysFfWEemvS5mdKdaW_Q",
+                            "_c5dRkFhSEemvS5mdKdaW_Q"
+                        ],
+                        "id": "_gUyI8FhSEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "briefDescription": "Changes state of product to sold"
+                    },
+                    {
+                        "MethodElementProperty": [
+                            {
+                                "name": "Workproduct_states",
+                                "value": ""
+                            },
+                            {
+                                "name": "me_edited",
+                                "value": true
+                            }
+                        ],
+                        "presentationName": "Farm Product State Raw",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "farm_product_state_raw",
+                        "id": "_6eybEFh7EemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Resell Product",
+                        "MandatoryInput": "_7opCQFh_EemvS5mdKdaW_Q",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_6eybEFh7EemvS5mdKdaW_Q",
+                        "name": "resell_product",
+                        "PerformedBy": "_1_GysFfWEemvS5mdKdaW_Q",
+                        "id": "_GEq5EFh8EemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "briefDescription": "Changes owner of farm product"
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Farm Product State Packaged",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "farm_product_state_packaged",
+                        "id": "_7opCQFh_EemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Farm Product State Sold",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "farm_product_state_sold",
+                        "id": "_-Tp3AFh_EemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    }
+                ],
+            },
+            {
+                "MethodElementProperty": [
+                    {
+                        "name": "pkg_loadCheck",
+                        "value": true
+                    },
+                    {
+                        "name": "me_edited",
+                        "value": true
+                    }
+                ],
+                "presentationName": "",
+                "changeDescription": "",
+                "xsi:type": "uma:ProcessComponent",
+                "global": false,
+                "Process": {
+                    "hasMultipleOccurrences": false,
+                    "presentationName": "Farming",
+                    "prefix": "",
+                    "xsi:type": "uma:DeliveryProcess",
+                    "isOngoing": false,
+                    "isEventDriven": false,
+                    "BreakdownElement": {
+                        "hasMultipleOccurrences": false,
+                        "presentationName": "crop_fields",
+                        "prefix": "",
+                        "xsi:type": "uma:Activity",
+                        "isOngoing": false,
+                        "isEventDriven": false,
+                        "isOptional": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "isRepeatable": false,
+                        "orderingGuide": "",
+                        "name": "crop_fields",
+                        "SuperActivity": "_s4gdwVfaEemvS5mdKdaW_Q",
+                        "id": "_m06uMVfbEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "isPlanned": true,
+                        "briefDescription": ""
+                    },
+                    "isOptional": false,
+                    "variabilityType": "na",
+                    "Presentation": {
+                        "presentationName": "",
+                        "EstimatingTechnique": "",
+                        "orderingGuide": "",
+                        "MainDescription": "",
+                        "ProjectCharacteristics": "",
+                        "id": "-3JDUMb2dT2iN34TUFwxL4Q",
+                        "suppressed": false,
+                        "ProjectMemberExpertise": "",
+                        "changeDescription": "",
+                        "TypeOfContract": "",
+                        "xsi:type": "uma:DeliveryProcessDescription",
+                        "externalId": "",
+                        "HowToStaff": "",
+                        "Purpose": "",
+                        "Scale": "",
+                        "version": "",
+                        "Alternatives": "",
+                        "UsageNotes": "",
+                        "usageGuidance": "",
+                        "KeyConsiderations": "",
+                        "Scope": "",
+                        "name": "Farming,_s4gdwVfaEemvS5mdKdaW_Q",
+                        "RiskLevel": "",
+                        "briefDescription": "",
+                        "authors": ""
+                    },
+                    "isAbstract": false,
+                    "isRepeatable": false,
+                    "orderingGuide": "",
+                    "name": "Farming",
+                    "id": "_s4gdwVfaEemvS5mdKdaW_Q",
+                    "suppressed": false,
+                    "isPlanned": true,
+                    "briefDescription": ""
+                },
+                "version": "",
+                "orderingGuide": "",
+                "name": "Farming",
+                "id": "_s4gdwFfaEemvS5mdKdaW_Q",
+                "suppressed": false,
+                "briefDescription": "",
+                "authors": ""
+            }
+        ],
+        "orderingGuide": "",
+        "name": "farm_plugin",
+        "userChangeable": true,
+        "id": "_SdGbIFfIEemr48fy94FfqQ",
+        "suppressed": false,
+        "supporting": false,
+        "briefDescription": "",
+        "authors": ""
+    },
+    "xmlns:uma": "http://www.eclipse.org/epf/uma/1.0.6",
+    "orderingGuide": "",
+    "name": "library.xmi",
+    "id": "_y62TUKVPEdmMZJIzZ1W7Pw",
+    "suppressed": false,
+    "briefDescription": "",
+    "authors": ""
+}}

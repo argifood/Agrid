@@ -1,0 +1,74 @@
+namespace org.agrid.supplychain
+/**
+ * The status of a FarmProduct
+ */
+enum FarmProductState {
+  o RAW
+  o PACKAGED
+  o SOLD
+}
+/**
+  * This participant is an abstract class that defines ontotites.
+ */
+abstract participant Entity identified by entityKey {
+  o String entityKey
+}
+/**
+  * A Retailer is a type of participant in the network.
+ */
+participant Retailer extends Entity {
+}
+/**
+  * A Farmer is a type of participant in the network.
+ */
+participant Farmer extends Entity {
+}
+
+ //Participants
+/**
+  * Package: Packaging of collected product
+ */
+transaction Package {
+  --> Retailer retailer 
+}
+/**
+  * Crop: 
+ */
+transaction Crop {
+  --> FarmProduct farmProduct 
+  --> Farmer farmer 
+}
+/**
+  * Sell B2C: Changes state of product to sold
+ */
+transaction SellB2c {
+  --> FarmProduct farmProduct 
+  --> Retailer retailer 
+}
+/**
+  * sell_b2b: Transfer of ownership between parties
+ */
+transaction SellB2b {
+  --> FarmProduct farmProduct 
+  --> Farmer farmer 
+  --> Retailer retailer 
+}
+//Assets
+
+/** 
+ * Defines the product asset and its states which are: raw, cropped_raw, collected and packaged. These states are * represented as fields of the asset and the transactions (Crop, Collect, Package) change the state of the product.
+*/
+abstract asset Product identified by productId {
+  o String productId
+  o Integer quantity
+  o String measurementUnit
+}
+
+/**
+  * Farm Product State Raw
+ */
+asset FarmProduct extends Product{
+  o FarmProductState farmProductState
+  --> Farmer farmer
+  --> Retailer retailer
+}
