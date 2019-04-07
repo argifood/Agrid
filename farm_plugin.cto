@@ -1,5 +1,14 @@
 namespace org.agrid.supplychain
 /**
+ * The status of a FarmField
+ */
+enum FarmFieldState {
+  o EMPTY
+  o SEEDED
+  o UNCROPPED
+  o CROPPED
+}
+/**
  * The status of a FarmProduct
  */
 enum FarmProductState {
@@ -8,10 +17,39 @@ enum FarmProductState {
   o SOLD
 }
 /**
+ * The status of a SeedingLicense
+ */
+enum SeedingLicenseState {
+  o PENDING
+  o APPROVED
+  o DECLINED
+}
+/**
+ * The status of a PackageContainer
+ */
+enum PackageContainerState {
+  o TRANSIT
+  o DELIVERED
+  o STORED
+}
+/**
+ * The status of a ProcessedProduct
+ */
+enum ProcessedProductState {
+  o PACKAGED
+  o SOLD
+  o RAW
+}
+/**
   * This participant is an abstract class that defines ontotites.
  */
 abstract participant Entity identified by entityKey {
   o String entityKey
+}
+/**
+  * A Wholeseller is a type of participant in the network.
+ */
+participant Wholeseller extends Entity {
 }
 /**
   * A Retailer is a type of participant in the network.
@@ -19,39 +57,167 @@ abstract participant Entity identified by entityKey {
 participant Retailer extends Entity {
 }
 /**
+  * A Government Agent is a type of participant in the network.
+ */
+participant GovernmentAgent extends Entity {
+}
+/**
+  * A Government Inspector is a type of participant in the network.
+ */
+participant GovernmentInspector extends Entity {
+}
+/**
   * A Farmer is a type of participant in the network.
  */
 participant Farmer extends Entity {
 }
+/**
+  * A collector is a type of participant in the network.
+ */
+participant Collector extends Entity {
+}
+/**
+  * A processor is a type of participant in the network.
+ */
+participant Processor extends Entity {
+}
 
  //Participants
 /**
-  * Package: Packaging of collected product
+  * Package Raw Product: Packaging of collected product
  */
-transaction Package {
+transaction PackageRawProduct {
+  --> FarmProduct farmProduct 
   --> Retailer retailer 
+  --> Collector collector 
+  --> Wholeseller wholeseller 
 }
 /**
-  * Crop: 
+  * Request Seed License: 
  */
-transaction Crop {
+transaction RequestSeedLicense {
+  --> SeedingLicense seedingLicense 
+  --> FarmField farmField 
+  --> Farmer farmer 
+  --> GovernmentAgent governmentAgent 
+}
+/**
+  * Sell Processed Product To Consumer: 
+ */
+transaction SellProcessedProductToConsumer {
+  --> ProcessedProduct processedProduct 
+  --> Retailer retailer 
+  --> Wholeseller wholeseller 
+  --> Processor processor 
+}
+/**
+  * Sell Raw Product To Consumer: Changes state of product to sold
+ */
+transaction SellRawProductToConsumer {
   --> FarmProduct farmProduct 
+  --> Retailer retailer 
+  --> Collector collector 
+  --> Wholeseller wholeseller 
+}
+/**
+  * Sell Raw Product To Business: Transfer of ownership between parties
+ */
+transaction SellRawProductToBusiness {
+  --> FarmProduct farmProduct 
+  --> Farmer farmer 
+  --> Retailer retailer 
+  --> Collector collector 
+  --> Wholeseller wholeseller 
+}
+/**
+  * Process Raw Product: 
+ */
+transaction ProcessRawProduct {
+  --> ProcessedProduct processedProduct 
+  --> FarmProduct farmProduct 
+  --> Processor processor 
+}
+/**
+  * Approve Seed License: 
+ */
+transaction ApproveSeedLicense {
+  --> SeedingLicense seedingLicense 
+  --> GovernmentAgent governmentAgent 
+}
+/**
+  * Decline Seed License: 
+ */
+transaction DeclineSeedLicense {
+  --> SeedingLicense seedingLicense 
+  --> GovernmentAgent governmentAgent 
+}
+/**
+  * Sell Processed Product To Business: 
+ */
+transaction SellProcessedProductToBusiness {
+  --> ProcessedProduct processedProduct 
+  --> Processor processor 
+  --> Retailer retailer 
+  --> Wholeseller wholeseller 
+}
+/**
+  * Declare Crop: 
+ */
+transaction DeclareCrop {
+  --> FarmProduct farmProduct 
+  --> FarmField farmField 
   --> Farmer farmer 
 }
 /**
-  * Sell B2C: Changes state of product to sold
+  * Inspect Field: 
  */
-transaction SellB2c {
-  --> FarmProduct farmProduct 
-  --> Retailer retailer 
+transaction InspectField {
+  --> InspectionReport inspectionReport 
+  --> FarmField farmField 
+  --> GovernmentInspector governmentInspector 
+  --> Farmer farmer 
 }
 /**
-  * sell_b2b: Transfer of ownership between parties
+  * Declare Seeding: 
  */
-transaction SellB2b {
-  --> FarmProduct farmProduct 
+transaction DeclareSeeding {
+  --> FarmField farmField 
   --> Farmer farmer 
-  --> Retailer retailer 
+  --> GovernmentAgent governmentAgent 
+}
+/**
+  * Declare Field: 
+ */
+transaction DeclareField {
+  --> FarmFieldDeclaration farmFieldDeclaration 
+  --> FarmField farmField 
+  --> Farmer farmer 
+  --> GovernmentAgent governmentAgent 
+}
+/**
+  * Inspect Processor: 
+ */
+transaction InspectProcessor {
+  --> InspectionReport inspectionReport 
+  --> GovernmentInspector governmentInspector 
+  --> Processor processor 
+}
+/**
+  * Send Product for Processing: 
+ */
+transaction SendProductForProcessing {
+  --> FarmProduct farmProduct 
+  --> Collector collector 
+  --> Farmer farmer 
+  --> Processor processor 
+}
+/**
+  * Deliver Raw Product: 
+ */
+transaction DeliverRawProduct {
+  --> FarmProduct farmProduct 
+  --> Collector collector 
+  --> Farmer farmer 
 }
 //Assets
 
@@ -65,17 +231,59 @@ abstract asset Product identified by productId {
 }
 
 /**
+  * Farm Field State empty
+ */
+asset FarmField extends Product{
+  o FarmFieldState farmFieldState
+}
+/**
   * Farm Product State Raw
  */
 asset FarmProduct extends Product{
   o FarmProductState farmProductState
   --> Farmer farmer
   --> Retailer retailer
+  --> Collector collector
+  --> Wholeseller wholeseller
+  --> Processor processor
 }
 /**
-  * Package Container
+  * Seeding License State Pending
+ */
+asset SeedingLicense extends Product{
+  o SeedingLicenseState seedingLicenseState
+  --> Farmer farmer
+  --> GovernmentAgent governmentAgent
+}
+/**
+  * Package Container State Transit
  */
 asset PackageContainer extends Product{
+  o PackageContainerState packageContainerState
 o String itemId
 o Integer numItems
+}
+/**
+  * Inspection Report
+ */
+asset InspectionReport extends Product{
+  --> GovernmentInspector governmentInspector
+  --> Farmer farmer
+  --> Processor processor
+}
+/**
+  * Processed Product State Packaged
+ */
+asset ProcessedProduct extends Product{
+  o ProcessedProductState processedProductState
+  --> Processor processor
+  --> Retailer retailer
+  --> Wholeseller wholeseller
+}
+/**
+  * Farm Field Declaration
+ */
+asset FarmFieldDeclaration extends Product{
+  --> Farmer farmer
+  --> GovernmentAgent governmentAgent
 }

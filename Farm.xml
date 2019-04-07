@@ -11,34 +11,42 @@
   <MethodElementProperty value="farm_plugin"/>
   <MethodPlugin name="farm_plugin" briefDescription="" id="_SdGbIFfIEemr48fy94FfqQ" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" supporting="false" userChangeable="true">
     <ReferencedMethodPlugin>_0TLvwMlgEdmt3adZL5Dmdw</ReferencedMethodPlugin>
-    <MethodPackage xsi:type="uma:ContentCategoryPackage" name="ContentCategories" id="_Btx_0FkVEemvS5mdKdaW_Q"/>
+    <MethodPackage xsi:type="uma:ContentCategoryPackage" name="ContentCategories" id="_xPVRkFkuEemvS5mdKdaW_Q"/>
     <MethodPackage xsi:type="uma:ContentPackage" name="farm_content_package" briefDescription="" id="_dSkv4FfIEemr48fy94FfqQ" orderingGuide="" presentationName="Farm Content Package" suppressed="false" global="false">
       <MethodElementProperty name="pkg_loadCheck" value="true"/>
       <MethodElementProperty name="me_edited" value="true"/>
       <ContentElement xsi:type="uma:Role" name="farmer" briefDescription="" id="_JedPsFfJEemr48fy94FfqQ" orderingGuide="" presentationName="Farmer" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
       </ContentElement>
-      <ContentElement xsi:type="uma:Task" name="crop" briefDescription="" id="_Qo42EFfJEemr48fy94FfqQ" orderingGuide="" presentationName="Crop" suppressed="false" isAbstract="false" variabilityType="na">
+      <ContentElement xsi:type="uma:Task" name="declare_crop" briefDescription="" id="_Qo42EFfJEemr48fy94FfqQ" orderingGuide="" presentationName="Declare Crop" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
-        <Presentation xsi:type="uma:TaskDescription" name=",_Qo42EFfJEemr48fy94FfqQ" briefDescription="" id="-BtrxiBPaMEDcu_ubyRkG3w" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" externalId="">
+        <Presentation xsi:type="uma:TaskDescription" name="declare_crop,_Qo42EFfJEemr48fy94FfqQ" briefDescription="" id="-BtrxiBPaMEDcu_ubyRkG3w" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" externalId="">
           <MainDescription></MainDescription>
           <KeyConsiderations></KeyConsiderations>
           <Alternatives></Alternatives>
           <Purpose></Purpose>
         </Presentation>
         <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <MandatoryInput>_jbqVEFkoEemvS5mdKdaW_Q</MandatoryInput>
         <Output>_6eybEFh7EemvS5mdKdaW_Q</Output>
+        <Output>_luGRwFkoEemvS5mdKdaW_Q</Output>
       </ContentElement>
       <ContentElement xsi:type="uma:Role" name="retailer" briefDescription="" id="_1_GysFfWEemvS5mdKdaW_Q" orderingGuide="" presentationName="Retailer" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
       </ContentElement>
-      <ContentElement xsi:type="uma:Task" name="package" briefDescription="Packaging of collected product" id="_OHwi0FfZEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package" suppressed="false" isAbstract="false" variabilityType="na">
+      <ContentElement xsi:type="uma:Task" name="package_raw_product" briefDescription="Packaging of collected product" id="_OHwi0FfZEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package Raw Product" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
         <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_HwXyYFkrEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_CGAQkFkrEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_6eybEFh7EemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_7opCQFh_EemvS5mdKdaW_Q</Output>
       </ContentElement>
-      <ContentElement xsi:type="uma:Task" name="sell_b2c" briefDescription="Changes state of product to sold" id="_gUyI8FhSEemvS5mdKdaW_Q" orderingGuide="" presentationName="Sell B2C" suppressed="false" isAbstract="false" variabilityType="na">
+      <ContentElement xsi:type="uma:Task" name="sell_raw_product_to_consumer" briefDescription="Changes state of product to sold" id="_gUyI8FhSEemvS5mdKdaW_Q" orderingGuide="" presentationName="Sell Raw Product To Consumer" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
         <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_HwXyYFkrEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_CGAQkFkrEemvS5mdKdaW_Q</PerformedBy>
         <MandatoryInput>_7opCQFh_EemvS5mdKdaW_Q</MandatoryInput>
         <Output>_-Tp3AFh_EemvS5mdKdaW_Q</Output>
       </ContentElement>
@@ -52,15 +60,158 @@
       <ContentElement xsi:type="uma:Artifact" name="farm_product_state_sold" briefDescription="" id="_-Tp3AFh_EemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Product State Sold" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
       </ContentElement>
-      <ContentElement xsi:type="uma:Task" name="sell_b2b" briefDescription="Transfer of ownership between parties" id="_ev-kIFibEemvS5mdKdaW_Q" orderingGuide="" presentationName="sell_b2b" suppressed="false" isAbstract="false" variabilityType="na">
+      <ContentElement xsi:type="uma:Task" name="sell_raw_product_to_business" briefDescription="Transfer of ownership between parties" id="_ev-kIFibEemvS5mdKdaW_Q" orderingGuide="" presentationName="Sell Raw Product To Business" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
         <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
         <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_HwXyYFkrEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_CGAQkFkrEemvS5mdKdaW_Q</PerformedBy>
         <MandatoryInput>_6eybEFh7EemvS5mdKdaW_Q</MandatoryInput>
         <Output>_6eybEFh7EemvS5mdKdaW_Q</Output>
       </ContentElement>
-      <ContentElement xsi:type="uma:Artifact" name="package_container" briefDescription="o String itemId&#xD;&#xA;o Integer numItems" id="_pwKJEFkUEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package Container" suppressed="false" isAbstract="false" variabilityType="na">
+      <ContentElement xsi:type="uma:Artifact" name="package_container_state_transit" briefDescription="o String itemId&#xD;&#xA;o Integer numItems" id="_pwKJEFkUEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package Container State Transit" suppressed="false" isAbstract="false" variabilityType="na">
         <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_field_state_empty" briefDescription="" id="_cpfdsFkoEemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Field State empty" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_field_state_seeded" briefDescription="" id="_hSfCEFkoEemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Field State Seeded" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_field_state_uncropped" briefDescription="" id="_jbqVEFkoEemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Field State Uncropped" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_field_state_cropped" briefDescription="" id="_luGRwFkoEemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Field State Cropped" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="declare_field" briefDescription="" id="_wJbBIFkoEemvS5mdKdaW_Q" orderingGuide="" presentationName="Declare Field" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <PerformedBy>_0xOSsFkoEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_cpfdsFkoEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_NVSeYFkpEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Role" name="government_agent" briefDescription="" id="_0xOSsFkoEemvS5mdKdaW_Q" orderingGuide="" presentationName="Government Agent" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Role" name="government_inspector" briefDescription="" id="_46hDUFkoEemvS5mdKdaW_Q" orderingGuide="" presentationName="Government Inspector" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="farm_field_declaration" briefDescription="" id="_NVSeYFkpEemvS5mdKdaW_Q" orderingGuide="" presentationName="Farm Field Declaration" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="request_seed_license" briefDescription="" id="_Rl9CUFkpEemvS5mdKdaW_Q" orderingGuide="" presentationName="Request Seed License" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <PerformedBy>_0xOSsFkoEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_cpfdsFkoEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_pRjU8FkpEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="seeding_license_state_pending" briefDescription="" id="_pRjU8FkpEemvS5mdKdaW_Q" orderingGuide="" presentationName="Seeding License State Pending" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="seeding_license_state_approved" briefDescription="" id="_sTRZgFkpEemvS5mdKdaW_Q" orderingGuide="" presentationName="Seeding License State Approved" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="seeding_license_state_declined" briefDescription="" id="_vU-3AFkpEemvS5mdKdaW_Q" orderingGuide="" presentationName="Seeding License State Declined" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="approve_seed_license" briefDescription="" id="_2V-NgFkpEemvS5mdKdaW_Q" orderingGuide="" presentationName="Approve Seed License" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_0xOSsFkoEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_pRjU8FkpEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_sTRZgFkpEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="decline_seed_license" briefDescription="" id="_-80HgFkpEemvS5mdKdaW_Q" orderingGuide="" presentationName="Decline Seed License" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_0xOSsFkoEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_pRjU8FkpEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_vU-3AFkpEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="inspection_report" briefDescription="" id="_FuwVYFkqEemvS5mdKdaW_Q" orderingGuide="" presentationName="Inspection Report" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="inspect_field" briefDescription="" id="_bgj00FkqEemvS5mdKdaW_Q" orderingGuide="" presentationName="Inspect Field" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_46hDUFkoEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <MandatoryInput>_hSfCEFkoEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_FuwVYFkqEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="declare_seeding" briefDescription="" id="_lTiKwFkqEemvS5mdKdaW_Q" orderingGuide="" presentationName="Declare Seeding" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <PerformedBy>_0xOSsFkoEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_cpfdsFkoEemvS5mdKdaW_Q</MandatoryInput>
+        <MandatoryInput>_sTRZgFkpEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_hSfCEFkoEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Role" name="wholeseller" briefDescription="" id="_CGAQkFkrEemvS5mdKdaW_Q" orderingGuide="" presentationName="Wholeseller" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Role" name="collector" briefDescription="" id="_HwXyYFkrEemvS5mdKdaW_Q" orderingGuide="" presentationName="collector" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="deliver_raw_product" briefDescription="" id="_frXy8FkrEemvS5mdKdaW_Q" orderingGuide="" presentationName="Deliver Raw Product" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_HwXyYFkrEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <MandatoryInput>_6eybEFh7EemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_6eybEFh7EemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="package_container_state_delivered" briefDescription="" id="_AGD8oFksEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package Container State Delivered" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="package_container_state_stored" briefDescription="" id="_Cb0TEFksEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package Container State Stored" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Role" name="processor" briefDescription="" id="_6PLMUFksEemvS5mdKdaW_Q" orderingGuide="" presentationName="processor" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="send_product_for_processing" briefDescription="" id="_-K_hoFksEemvS5mdKdaW_Q" orderingGuide="" presentationName="Send Product for Processing" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_HwXyYFkrEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_JedPsFfJEemr48fy94FfqQ</PerformedBy>
+        <PerformedBy>_6PLMUFksEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_6eybEFh7EemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_6eybEFh7EemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="processed_product_state_packaged" briefDescription="" id="_UTJEgFktEemvS5mdKdaW_Q" orderingGuide="" presentationName="Processed Product State Packaged" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="processed_product_state_sold" briefDescription="" id="_jx4DYFktEemvS5mdKdaW_Q" orderingGuide="" presentationName="Processed Product State Sold" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="process_raw_product" briefDescription="" id="_oKWfgFktEemvS5mdKdaW_Q" orderingGuide="" presentationName="Process Raw Product" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_6PLMUFksEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_6eybEFh7EemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_UTJEgFktEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="processed_product_state_raw" briefDescription="" id="_0VyhoFktEemvS5mdKdaW_Q" orderingGuide="" presentationName="Processed Product State Raw" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="sell_processed_product_to_business" briefDescription="" id="_PJ3oIFkuEemvS5mdKdaW_Q" orderingGuide="" presentationName="Sell Processed Product To Business" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_6PLMUFksEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_CGAQkFkrEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_0VyhoFktEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_UTJEgFktEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="sell_processed_product_to_consumer" briefDescription="" id="_W6UssFkuEemvS5mdKdaW_Q" orderingGuide="" presentationName="Sell Processed Product To Consumer" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_CGAQkFkrEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_6PLMUFksEemvS5mdKdaW_Q</PerformedBy>
+        <MandatoryInput>_UTJEgFktEemvS5mdKdaW_Q</MandatoryInput>
+        <Output>_jx4DYFktEemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Task" name="inspect_processor" briefDescription="" id="_ec9XsFkuEemvS5mdKdaW_Q" orderingGuide="" presentationName="Inspect Processor" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
+        <PerformedBy>_46hDUFkoEemvS5mdKdaW_Q</PerformedBy>
+        <PerformedBy>_6PLMUFksEemvS5mdKdaW_Q</PerformedBy>
+        <Output>_FuwVYFkqEemvS5mdKdaW_Q</Output>
       </ContentElement>
     </MethodPackage>
     <MethodPackage xsi:type="uma:ProcessComponent" name="Farming" briefDescription="" id="_s4gdwFfaEemvS5mdKdaW_Q" orderingGuide="" presentationName="" suppressed="false" global="false" authors="" changeDescription="" version="">

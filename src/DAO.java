@@ -156,10 +156,23 @@ public class DAO {
 				task.setName(elem.getString("name"));
 				task.briefDescription = elem.getString("briefDescription");
 				task.presentationName = elem.getString("presentationName");
-				if(elem.has("MandatoryInput"))
-					task.mandatoryInput = elem.getString("MandatoryInput");
-				if(elem.has("Output"))
+				if(elem.has("MandatoryInput")) {
+					
+					try {
+						JSONArray inputs = elem.getJSONArray("MandatoryInput");
+						task.mandatoryInput = inputs.getString(0);
+					} catch(JSONException e) {
+						task.mandatoryInput = elem.getString("MandatoryInput");
+					}
+				}
+				if(elem.has("Output")) {
+					try {
+						JSONArray outputs = elem.getJSONArray("Output");
+						task.output = outputs.getString(0);
+					} catch(JSONException e) {
 						task.output = elem.getString("Output");
+					}
+				}
 				
 				// check if 1 or multiple performers
 				try {
