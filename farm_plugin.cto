@@ -72,3 +72,10 @@ asset FarmProduct extends Product{
   --> Farmer farmer
   --> Retailer retailer
 }
+/**
+  * Package Container
+ */
+asset PackageContainer extends Product{
+o String itemId
+o Integer numItems
+}

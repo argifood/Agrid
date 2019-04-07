@@ -342,6 +342,11 @@ public class DAO {
 				writer.println("  --> "+r.camelCaseName+" "+r.pascalCaseName);
 			}
 			
+			// print fields in briefDescription
+			if(a.briefDescription.length() > 2 && a.briefDescription.substring(0, 2).equals("o ")) {
+				writer.println(a.briefDescription);
+			}
+			
 			writer.print("}\r\n");
 			}
 	}

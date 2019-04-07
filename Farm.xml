@@ -11,7 +11,7 @@
   <MethodElementProperty value="farm_plugin"/>
   <MethodPlugin name="farm_plugin" briefDescription="" id="_SdGbIFfIEemr48fy94FfqQ" orderingGuide="" presentationName="" suppressed="false" authors="" changeDescription="" version="" supporting="false" userChangeable="true">
     <ReferencedMethodPlugin>_0TLvwMlgEdmt3adZL5Dmdw</ReferencedMethodPlugin>
-    <MethodPackage xsi:type="uma:ContentCategoryPackage" name="ContentCategories" id="_TL4ZYFicEemvS5mdKdaW_Q"/>
+    <MethodPackage xsi:type="uma:ContentCategoryPackage" name="ContentCategories" id="_Btx_0FkVEemvS5mdKdaW_Q"/>
     <MethodPackage xsi:type="uma:ContentPackage" name="farm_content_package" briefDescription="" id="_dSkv4FfIEemr48fy94FfqQ" orderingGuide="" presentationName="Farm Content Package" suppressed="false" global="false">
       <MethodElementProperty name="pkg_loadCheck" value="true"/>
       <MethodElementProperty name="me_edited" value="true"/>
@@ -58,6 +58,9 @@
         <PerformedBy>_1_GysFfWEemvS5mdKdaW_Q</PerformedBy>
         <MandatoryInput>_6eybEFh7EemvS5mdKdaW_Q</MandatoryInput>
         <Output>_6eybEFh7EemvS5mdKdaW_Q</Output>
+      </ContentElement>
+      <ContentElement xsi:type="uma:Artifact" name="package_container" briefDescription="o String itemId&#xD;&#xA;o Integer numItems" id="_pwKJEFkUEemvS5mdKdaW_Q" orderingGuide="" presentationName="Package Container" suppressed="false" isAbstract="false" variabilityType="na">
+        <MethodElementProperty name="me_edited" value="true"/>
       </ContentElement>
     </MethodPackage>
     <MethodPackage xsi:type="uma:ProcessComponent" name="Farming" briefDescription="" id="_s4gdwFfaEemvS5mdKdaW_Q" orderingGuide="" presentationName="" suppressed="false" global="false" authors="" changeDescription="" version="">

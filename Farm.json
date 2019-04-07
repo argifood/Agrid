@@ -24,7 +24,7 @@
             {
                 "xsi:type": "uma:ContentCategoryPackage",
                 "name": "ContentCategories",
-                "id": "_TL4ZYFicEemvS5mdKdaW_Q"
+                "id": "_Btx_0FkVEemvS5mdKdaW_Q"
             },
             {
                 "MethodElementProperty": [
@@ -208,6 +208,21 @@
                         "id": "_ev-kIFibEemvS5mdKdaW_Q",
                         "suppressed": false,
                         "briefDescription": "Transfer of ownership between parties"
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Package Container",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "package_container",
+                        "id": "_pwKJEFkUEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": "o String itemId\r\no Integer numItems"
                     }
                 ],
                 "orderingGuide": "",
