@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
 
     private void setupNavigationViewMenu(Menu menu) {
         for (int i = 0; i < uiSkeleton.uiCategories.size(); i++) {
-            ModelObject modelObject = ModelObject.values()[i];
+            //ModelObject modelObject = ModelObject.values()[i];
             MenuItem menuItem = menu.add(R.id.menu_group, Menu.FIRST + i, i, uiSkeleton.uiCategories.get(i));
             menuItem.setShortcut('3', 'c');
             menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);

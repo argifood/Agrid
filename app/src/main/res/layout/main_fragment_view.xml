@@ -21,8 +21,8 @@
         android:id="@+id/fragmentActionsSeparator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/fragmentTitle"
@@ -46,9 +46,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/actionsRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintTop_toTopOf="@id/spinner_guideline">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/spinner_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/fragmentActionsSeparator">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -56,8 +59,10 @@
         android:id="@+id/mainRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/actionsRecyclerView"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toEndOf="@id/actionsRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentTitleSeparator">
 
 
     </androidx.recyclerview.widget.RecyclerView>

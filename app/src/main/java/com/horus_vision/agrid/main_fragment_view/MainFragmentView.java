@@ -22,6 +22,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -77,15 +78,18 @@ public class MainFragmentView extends Fragment {
 
     private void setupUI() {
         titleView.setText(category);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                RecyclerView.VERTICAL);
         LinearLayoutManager mainLinearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false);
-        LinearLayoutManager actionsLinearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
+        LinearLayoutManager actionsLinearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false);
 
         recyclerView.setLayoutManager(mainLinearLayoutManager);
+        recyclerView.addItemDecoration(dividerItemDecoration);
         actionsRecyclerView.setLayoutManager(actionsLinearLayoutManager);
+        actionsRecyclerView.addItemDecoration(dividerItemDecoration);
 
         mainRecyclerAdapter = new MainRecyclerAdapter();
         recyclerView.setAdapter(mainRecyclerAdapter);
-        //TODO finalize recycler view initialization
 
 
         setupSelectionSpinner();

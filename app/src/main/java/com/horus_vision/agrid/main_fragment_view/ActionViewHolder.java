@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ActionViewHolder extends RecyclerView.ViewHolder {
 
+    private static String string;
     private DAO.Task task;
     private Button actionButton;
 
@@ -21,6 +22,22 @@ public class ActionViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(DAO.Task task){
         this.task =task;
-        actionButton.setText(task.name);
+        actionButton.setText(beautifulName(task.name));
+    }
+
+    private String beautifulName(String name){
+        name = name.toLowerCase();
+        String[] parts = name.split("_");
+        name = "";
+        for (String part : parts){
+            name += toProperCase(part) + " ";
+        }
+        return name;
+    }
+
+    static String toProperCase(String s) {
+        string = s.substring(0, 1).toUpperCase() +
+                s.substring(1).toLowerCase();
+        return string;
     }
 }
