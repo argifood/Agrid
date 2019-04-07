@@ -1,0 +1,325 @@
+{"uma:MethodLibrary": {
+    "MethodElementProperty": [
+        {"value": 0},
+        {"value": "_0TLvwMlgEdmt3adZL5Dmdw"},
+        {"value": "openup"},
+        {"value": "_WCUhAO8KEdmKSqa_gSYthg"},
+        {"value": "base_concepts"},
+        {"value": "_Nq0WYFkVEdul8L-IGeA7TA"},
+        {"value": "dsdm_openup"},
+        {"value": "_SdGbIFfIEemr48fy94FfqQ"},
+        {"value": "farm_plugin"}
+    ],
+    "presentationName": "",
+    "changeDescription": "",
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "version": "",
+    "tool": "epf=1.5.0",
+    "MethodPlugin": {
+        "ReferencedMethodPlugin": "_0TLvwMlgEdmt3adZL5Dmdw",
+        "presentationName": "",
+        "changeDescription": "",
+        "version": "",
+        "MethodPackage": [
+            {
+                "xsi:type": "uma:ContentCategoryPackage",
+                "name": "ContentCategories",
+                "id": "_TL4ZYFicEemvS5mdKdaW_Q"
+            },
+            {
+                "MethodElementProperty": [
+                    {
+                        "name": "pkg_loadCheck",
+                        "value": true
+                    },
+                    {
+                        "name": "me_edited",
+                        "value": true
+                    }
+                ],
+                "presentationName": "Farm Content Package",
+                "ContentElement": [
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Farmer",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Role",
+                        "name": "farmer",
+                        "id": "_JedPsFfJEemr48fy94FfqQ",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Crop",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "Presentation": {
+                            "presentationName": "",
+                            "changeDescription": "",
+                            "xsi:type": "uma:TaskDescription",
+                            "externalId": "",
+                            "Purpose": "",
+                            "version": "",
+                            "Alternatives": "",
+                            "KeyConsiderations": "",
+                            "orderingGuide": "",
+                            "name": ",_Qo42EFfJEemr48fy94FfqQ",
+                            "MainDescription": "",
+                            "id": "-BtrxiBPaMEDcu_ubyRkG3w",
+                            "suppressed": false,
+                            "briefDescription": "",
+                            "authors": ""
+                        },
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_6eybEFh7EemvS5mdKdaW_Q",
+                        "name": "crop",
+                        "PerformedBy": "_JedPsFfJEemr48fy94FfqQ",
+                        "id": "_Qo42EFfJEemr48fy94FfqQ",
+                        "suppressed": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Retailer",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Role",
+                        "name": "retailer",
+                        "id": "_1_GysFfWEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Package",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Task",
+                        "name": "package",
+                        "PerformedBy": "_1_GysFfWEemvS5mdKdaW_Q",
+                        "id": "_OHwi0FfZEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": "Packaging of collected product"
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Sell B2C",
+                        "MandatoryInput": "_7opCQFh_EemvS5mdKdaW_Q",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_-Tp3AFh_EemvS5mdKdaW_Q",
+                        "name": "sell_b2c",
+                        "PerformedBy": "_1_GysFfWEemvS5mdKdaW_Q",
+                        "id": "_gUyI8FhSEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "briefDescription": "Changes state of product to sold"
+                    },
+                    {
+                        "MethodElementProperty": [
+                            {
+                                "name": "Workproduct_states",
+                                "value": ""
+                            },
+                            {
+                                "name": "me_edited",
+                                "value": true
+                            }
+                        ],
+                        "presentationName": "Farm Product State Raw",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "farm_product_state_raw",
+                        "id": "_6eybEFh7EemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Farm Product State Packaged",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "farm_product_state_packaged",
+                        "id": "_7opCQFh_EemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "Farm Product State Sold",
+                        "orderingGuide": "",
+                        "xsi:type": "uma:Artifact",
+                        "name": "farm_product_state_sold",
+                        "id": "_-Tp3AFh_EemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "briefDescription": ""
+                    },
+                    {
+                        "MethodElementProperty": {
+                            "name": "me_edited",
+                            "value": true
+                        },
+                        "presentationName": "sell_b2b",
+                        "MandatoryInput": "_6eybEFh7EemvS5mdKdaW_Q",
+                        "xsi:type": "uma:Task",
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "orderingGuide": "",
+                        "Output": "_6eybEFh7EemvS5mdKdaW_Q",
+                        "name": "sell_b2b",
+                        "PerformedBy": [
+                            "_JedPsFfJEemr48fy94FfqQ",
+                            "_1_GysFfWEemvS5mdKdaW_Q"
+                        ],
+                        "id": "_ev-kIFibEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "briefDescription": "Transfer of ownership between parties"
+                    }
+                ],
+                "orderingGuide": "",
+                "xsi:type": "uma:ContentPackage",
+                "name": "farm_content_package",
+                "global": false,
+                "id": "_dSkv4FfIEemr48fy94FfqQ",
+                "suppressed": false,
+                "briefDescription": ""
+            },
+            {
+                "MethodElementProperty": [
+                    {
+                        "name": "pkg_loadCheck",
+                        "value": true
+                    },
+                    {
+                        "name": "me_edited",
+                        "value": true
+                    }
+                ],
+                "presentationName": "",
+                "changeDescription": "",
+                "xsi:type": "uma:ProcessComponent",
+                "global": false,
+                "Process": {
+                    "hasMultipleOccurrences": false,
+                    "presentationName": "Farming",
+                    "prefix": "",
+                    "xsi:type": "uma:DeliveryProcess",
+                    "isOngoing": false,
+                    "isEventDriven": false,
+                    "BreakdownElement": {
+                        "hasMultipleOccurrences": false,
+                        "presentationName": "crop_fields",
+                        "prefix": "",
+                        "xsi:type": "uma:Activity",
+                        "isOngoing": false,
+                        "isEventDriven": false,
+                        "isOptional": false,
+                        "variabilityType": "na",
+                        "isAbstract": false,
+                        "isRepeatable": false,
+                        "orderingGuide": "",
+                        "name": "crop_fields",
+                        "SuperActivity": "_s4gdwVfaEemvS5mdKdaW_Q",
+                        "id": "_m06uMVfbEemvS5mdKdaW_Q",
+                        "suppressed": false,
+                        "isPlanned": true,
+                        "briefDescription": ""
+                    },
+                    "isOptional": false,
+                    "variabilityType": "na",
+                    "Presentation": {
+                        "presentationName": "",
+                        "EstimatingTechnique": "",
+                        "orderingGuide": "",
+                        "MainDescription": "",
+                        "ProjectCharacteristics": "",
+                        "id": "-3JDUMb2dT2iN34TUFwxL4Q",
+                        "suppressed": false,
+                        "ProjectMemberExpertise": "",
+                        "changeDescription": "",
+                        "TypeOfContract": "",
+                        "xsi:type": "uma:DeliveryProcessDescription",
+                        "externalId": "",
+                        "HowToStaff": "",
+                        "Purpose": "",
+                        "Scale": "",
+                        "version": "",
+                        "Alternatives": "",
+                        "UsageNotes": "",
+                        "usageGuidance": "",
+                        "KeyConsiderations": "",
+                        "Scope": "",
+                        "name": "Farming,_s4gdwVfaEemvS5mdKdaW_Q",
+                        "RiskLevel": "",
+                        "briefDescription": "",
+                        "authors": ""
+                    },
+                    "isAbstract": false,
+                    "isRepeatable": false,
+                    "orderingGuide": "",
+                    "name": "Farming",
+                    "id": "_s4gdwVfaEemvS5mdKdaW_Q",
+                    "suppressed": false,
+                    "isPlanned": true,
+                    "briefDescription": ""
+                },
+                "version": "",
+                "orderingGuide": "",
+                "name": "Farming",
+                "id": "_s4gdwFfaEemvS5mdKdaW_Q",
+                "suppressed": false,
+                "briefDescription": "",
+                "authors": ""
+            }
+        ],
+        "orderingGuide": "",
+        "name": "farm_plugin",
+        "userChangeable": true,
+        "id": "_SdGbIFfIEemr48fy94FfqQ",
+        "suppressed": false,
+        "supporting": false,
+        "briefDescription": "",
+        "authors": ""
+    },
+    "xmlns:uma": "http://www.eclipse.org/epf/uma/1.0.6",
+    "orderingGuide": "",
+    "name": "library.xmi",
+    "id": "_y62TUKVPEdmMZJIzZ1W7Pw",
+    "suppressed": false,
+    "briefDescription": "",
+    "authors": ""
+}}
